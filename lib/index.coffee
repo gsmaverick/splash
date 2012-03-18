@@ -16,6 +16,10 @@ Splash =
   # that don't fall strictly inside the scope of a Backbone primitive
   Controllers: {}
 
+  # This is a namespace for any view helpers needed.  A helper should be an 
+  # object where each property is a function call.
+  Helpers: {}
+
   # Event bus for different parts of the application to communicate without
   # needing to know specific implementation details
   Vent: _.extend {}, Backbone.Events
