@@ -13,4 +13,8 @@ task :test do
   	name = (coffee.split('.')[0]) + '.js'
   	File.open('test/' + name, 'w+') { |file| file.write(CoffeeScript.compile File.read(coffee)) }
   end
+  Dir.glob('lib/**/*.coffee').each do |coffee|
+  	name = (coffee.split('.')[0]) + '.js'
+  	File.open('test/' + name, 'w+') { |file| file.write(CoffeeScript.compile File.read(coffee)) }
+  end
 end
