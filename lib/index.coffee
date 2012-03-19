@@ -6,7 +6,7 @@
 
 # Main application container/namespace.  No functions or properties should be 
 # defined directly on this variable.
-Splash = 
+window.Splash = 
   Views: {}
   Models: {}
   Collections: {}

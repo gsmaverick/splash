@@ -1,2 +1,4 @@
 # Ignore generated docs directory for now
 docs/
+#test/*.html
+test/**/*.js
