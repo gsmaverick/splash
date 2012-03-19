@@ -1,4 +1,6 @@
 # Ignore generated docs directory for now
 docs/
-#test/*.html
-test/**/*.js
+
+# Ignore any generated javascript files for testing
+#test/**/*.js
+#test/**/**/*.js
