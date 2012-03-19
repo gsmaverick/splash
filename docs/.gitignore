@@ -1,0 +1,3 @@
+# Ignore everything in this directory because it's auto generated
+*
+!.gitignore
