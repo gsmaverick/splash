@@ -16,7 +16,7 @@
         type: 'indoor'
       });
       expect(resource.name()).toBe('McMaster Pool');
-      return expect(facility.type()).toBe('indoor');
+      return expect(resource.type()).toBe('indoor');
     });
   });
 
