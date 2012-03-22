@@ -15,6 +15,11 @@ we had started with Dowsing.  The goal for Splash is to build a suite of
 cross-platform applications that will be readily extensible for any other 
 municipalities that wish to use it.
 
+# Testing
+
+You can run the complete test suite by running ruby app.rb and then going to 
+http://localhost:4000/test.html
+
 # Bugs
 
 If you encounter bugs, please follow these steps:
@@ -28,7 +33,8 @@ If you encounter bugs, please follow these steps:
 Let us know in detail what is going on, including the details on the platform 
 you're experience issues on and preferably a way to reproduce the bug.
 
-Better, yet, fix the bug and bask in the glory of being a contributor.
+Better, yet, fix the bug, along with a correspoding test so we don't make the 
+same mistake in the future and bask in the glory of being a contributor.
 
 # License
 
