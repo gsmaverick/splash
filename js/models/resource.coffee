@@ -3,6 +3,12 @@
 # written to be self documenting and calling @get directly on a model instance
 # should be avoided.
 class Splash.Models.Resource extends Backbone.Model
+  defaults:
+    'name': ''
+    'lat': '0'
+    'lng': '0'
+    'rink_type': ''
+
   initialize: ->
 
   # Returns the **Facility** this **Resource** belongs to 

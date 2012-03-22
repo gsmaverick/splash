@@ -3,6 +3,13 @@
 # written to be self documenting and calling @get directly on a model instance
 # should be avoided.
 class Splash.Models.Facility extends Backbone.Model
+  defaults:
+    'name': ''
+    'address': ''
+    'city': ''
+    'phone': ''
+    'email': ''
+  
   initialize: ->
   
   name: ->
