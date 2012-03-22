@@ -13,9 +13,21 @@ class SassHandler < Sinatra::Base
   end
 end
 
+# Compile and serve coffeescript files
+class CoffeeHandler < Sinatra::Base
+  
+  set :views, File.dirname(__FILE__) + '/js'
+
+  get '/js/*.js'  do
+    filename = params[:splat].first
+    coffee filename.to_sym
+  end
+end
+
 # Application class
 class Splash < Sinatra::Base
   use SassHandler
+  use CoffeeHandler
 
   set :views, File.dirname(__FILE__) + '/views'
 
