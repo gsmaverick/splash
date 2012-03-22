@@ -29,11 +29,16 @@ class Splash < Sinatra::Base
   use SassHandler
   use CoffeeHandler
 
+  set :public_folder, File.dirname(__FILE__) + '/static'
   set :views, File.dirname(__FILE__) + '/views'
 
   get '/' do
     haml :index
   end
+
+  #get '/test' do
+  #  erb :test, :layout => false
+  #end
 end
 
 Splash.run! :port => 4000
