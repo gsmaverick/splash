@@ -3,5 +3,5 @@ require 'bundler'
 
 desc 'Generate the documentation for Splash!'
 task :docs do
-  sh 'rocco lib/**/*.coffee --output=docs/'
+  sh 'rocco js/**/*.coffee --output=docs/'
 end
