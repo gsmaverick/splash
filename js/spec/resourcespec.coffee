@@ -8,7 +8,7 @@ describe "resource model", ->
     expect(resource.type()).toBe('')
   
   it 'should be properly initialized from a JSON string', ->
-    resource = new Splash.Models.Resource name: 'McMaster Pool', type: 'indoor'
+    resource = new Splash.Models.Resource name: 'McMaster Pool', rink_type: 'indoor'
     expect(resource.name()).toBe('McMaster Pool')
     expect(resource.type()).toBe('indoor')
     # Incomplete test here because we're not testing for lat/lng properties
