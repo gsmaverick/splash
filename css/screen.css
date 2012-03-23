@@ -19,6 +19,7 @@ body.app {
   position: absolute;
   top: 0px;
   left: 90px;
+  z-index: 10;
 
   margin: 0;
   padding: 5px 0;
@@ -85,4 +86,61 @@ body.app {
   float: right;
   margin: 0 30px 5px 0;
   font-size: 12px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+  z-index: 10;
+
+  margin: 0;
+  padding: 5px 10px 5px 0px;
+
+  background-color: #f0f0f0;
+  background-image: -moz-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: -ms-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ececed));
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: -o-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: linear-gradient(top, #fdfdfd, #ececed);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#ececed', GradientType=0);
+
+     -moz-box-shadow: 3px 3px 12px 1px #888;
+  -webkit-box-shadow: 3px 3px 12px 1px #888;
+          box-shadow: 3px 3px 12px 1px #888;
+  
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+}
+
+#footer a {
+	color: #666;
+}
+
+#footer a img {
+  height: 14px;
+  width: 14px;
+  margin-right: 4px;
+
+  vertical-align: middle;
+  outline: 0;
+  border: 0;
+}
+
+#footer a, 
+#footer b {
+  padding: 0 10px;
+  border-right: 1px solid #bbb;
+}
+
+#footer span {
+  padding: 0 0 0 30px;
+  font-size: 12px;
+  line-height: 21px;
+  font-style: italic;
+  color: #666;
 }
