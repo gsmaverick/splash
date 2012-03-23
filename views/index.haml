@@ -1,1 +1,8 @@
-%h1= "Index.html"
+#header
+  = img '/images/logo.png', {:id => 'logo'}
+  %input{:type => 'text', :id => 'query', :placeholder => 'Find activities nearby', :size => '25'}
+  .clearfix
+
+  %span{:class => 'tagline'}= 'Cool off this summer'
+  %a{:href => '#'}= 'Advanced Search'
+  .clearfix

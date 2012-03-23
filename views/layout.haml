@@ -2,22 +2,23 @@
 %html{:lang => 'en'}
   %head
     %meta{:charset => "utf-8"}
-    %title 'Splash'
+    %title Splash
 
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
 
-    - if @mobile
-      %script{:src => '/vendor/zepto.js'}
-    - else
-      %script{:src => '/vendor/jquery.js'}
-    
-    - if @map
-      %script{:src => 'http://maps.googleapis.com/maps/api/js?sensor=true&region=CA'}
-    
-    %script{:src => '/vendor/underscore.js'}
-    %script{:src => '/vendor/backbone.js'}
-    %script{:src => '/vendor/handlebars.js'}
+    = css :application
 
-  %body
-    = yield
+    - if @mobile
+      = js :mobile
+    - elsif @slim
+      = js :slim
+    - else
+      = js :desktop
+
+  - if @mobile or @slim
+    %body
+  - else
+    %body{:class => 'app'}
+    
+  = yield

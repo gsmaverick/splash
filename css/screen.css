@@ -1,0 +1,88 @@
+body {
+  font: normal 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Specific styling for the desktop application part of the site as it should
+ * act as an app and disallow scrolling and the rest.
+ */
+body.app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#header {
+  position: absolute;
+  top: 0px;
+  left: 90px;
+
+  margin: 0;
+  padding: 5px 0;
+
+  border: 1px solid #ccc;
+  border-top: 0;
+
+  background-color: #f0f0f0;
+  background-image: -moz-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: -ms-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ececed));
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: -o-linear-gradient(top, #fdfdfd, #ececed);
+  background-image: linear-gradient(top, #fdfdfd, #ececed);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#ececed', GradientType=0);
+
+     -moz-box-shadow: 0 0 8px 1px #aaa;
+  -webkit-box-shadow: 0 0 8px 1px #aaa;
+          box-shadow: 0 0 8px 1px #aaa;
+}
+
+#header #logo {
+  float: left;
+  width: 150px;
+  height: 64px;
+  margin: -10px 0;
+  background-color: transparent; /* png transparency fix */
+}
+
+#header #query {
+  float: left;
+  margin: 5px 25px 5px 5px;
+  padding: 6px 4px 6px 25px;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+
+  background-image: url(/images/magnify.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 4px 6px;
+
+  border: 1px solid #ccc;
+  outline: 0;
+  vertical-align: top;
+}
+
+#header #query[placeholder] {
+  padding-left: 28px;
+}
+
+#header .tagline {
+  float: left;
+  width: 150px;
+
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#header a {
+  float: right;
+  margin: 0 30px 5px 0;
+  font-size: 12px;
+}

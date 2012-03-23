@@ -13,14 +13,24 @@ class Splash < Sinatra::Base
     serve '/css',    from: 'css'       # Optional
     serve '/images', from: 'images'    # Optional
 
-    # The second parameter defines where the compressed version will be served.
-    # (Note: that parameter is optional, AssetPack will figure it out.)
-    js :app, '/js/app.js', [
-      '/js/vendor/**/*.js',
-      '/js/app/**/*.js'
+    # Javascript file groupings
+    js :desktop, '/js/desktop.js', [
+      '/js/vendor/jquery.js',
+      '/js/vendor/underscore.js',
+      '/js/vendor/backbone.js',
+      '/js/vendor/handlebars.js',
+      '/js/*.js',
+      '/js/models/*.js'
     ]
 
+    js :slim, '/js/slim.js', [
+      '/js/vendor/jquery.js',
+      '/js/vendor/jquery.waypoints.js',
+    ]
+
+
     css :application, '/css/application.css', [
+      '/css/normalize.css',
       '/css/screen.css'
     ]
 
