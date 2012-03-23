@@ -3,6 +3,10 @@
 # written to be self documenting and calling @get directly on a model instance
 # should be avoided.
 class Splash.Models.Activity extends Backbone.Model
+  defaults:
+    'name': ''
+    'fee_class': ''
+    
   initialize: ->
 
   name: ->
