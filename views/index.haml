@@ -1,11 +1,41 @@
 #header
   = img '/images/logo.png', {:id => 'logo'}
-  %input{:type => 'text', :id => 'query', :placeholder => 'Find activities nearby', :size => '25'}
+  %form{:id => 'search_form'}
+    %input{:type => 'text', :id => 'query', :placeholder => 'Find activities nearby', :size => '25'}
   .clearfix
 
   %span{:class => 'tagline'}= 'Cool off this summer'
   %a{:href => '#'}= 'Advanced Search'
   .clearfix
+
+#advanced
+  %h4= 'Water Spot Types'
+  %ul{:class => 'types'}
+    %li{:class => 'item active'}= 'Any'
+    %li{:class => 'item'}= 'Pool'
+    %li{:class => 'item'}= 'Wading'
+    %li{:class => 'item'}= 'Splash'
+    %li{:class => 'item'}= 'Beach'
+    .clearfix
+
+  %h4{:style => 'float: left'}= 'Admission Price'
+  %span{:style => 'float: right; color: #999; font-size: 0.75em; line-height: 1; margin: 9px 0 5px 0; font-weight: bold;'}= '$0 - $20'
+  .clearfix
+
+  %div{:style => 'margin: 10px 0 20px 0; height: 10px; border-radius: 2px; background: #fff; border: 1px solid #ddd; position: relative;'}
+    %div{:style => 'background: rgb(0, 158, 195); height: 8px; position: relative; left: 20%; width: 35%; top: 1px;'}
+
+  %h4= 'Transit Accessibility'
+  %ul{:class => 'types transit'}
+    %li{:class => 'item active'}= 'Any'
+    %li{:class => 'item'}= 'Bus'
+    %li{:class => 'item'}= 'Foot'
+    / Within 1.5km
+    %li{:class => 'item'}= 'Car'
+    .clearfix
+  
+  %button{:class => 'filter', :style => 'float: right'}= 'Filter'
+  %button{:class => 'cancel', :style => 'float: left; margin: 5px 0 0 0;'}= 'Cancel'
 
 #footer
   %b= 'Splash'

@@ -9,6 +9,9 @@
 
     = css :application
 
+    - if !@slim
+      %script{:type => "text/javascript", :src => 'http://maps.googleapis.com/maps/api/js?sensor=true&region=CA'}
+
     - if @mobile
       = js :mobile
     - elsif @slim

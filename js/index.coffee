@@ -27,3 +27,9 @@ window.Splash =
   # Any initialized store of data be it a collection or model is stored in here
   # to prevent duplication of data.
   Data: {}
+  
+  # Application wide instance of the Google Geocoder
+  Geocoder: new google.maps.Geocoder()
+
+  Config:
+    center: new google.maps.LatLng(43.24895389686911, -79.86236572265625)
