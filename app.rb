@@ -2,6 +2,8 @@ require 'rubygems'
 require 'bundler'
 require 'sinatra'
 require 'sinatra/assetpack'
+require 'haml'
+require 'coffee-script'
 
 # Application class
 class Splash < Sinatra::Base
@@ -19,8 +21,12 @@ class Splash < Sinatra::Base
       '/js/vendor/underscore.js',
       '/js/vendor/backbone.js',
       '/js/vendor/handlebars.js',
-      '/js/*.js',
-      '/js/models/*.js'
+      '/js/index.js',
+      '/js/models/*.js',
+      '/js/views/*.js',
+      '/js/desktop/*.js',
+      '/js/desktop/views/*.js',
+      '/js/web.js'
     ]
 
     js :slim, '/js/slim.js', [
@@ -43,6 +49,10 @@ class Splash < Sinatra::Base
 
   get '/' do
     haml :index
+  end
+
+  get '/about' do
+    haml :about, :locals => { :slim => true }
   end
 end
 
