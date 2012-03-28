@@ -66,6 +66,7 @@ class Splash.Views.MapView extends Backbone.View
       @locationMarker.setMap null
     
     @locationMarker = new google.maps.Marker
+      animation: google.maps.Animation.DROP
       position: center
       map: @map
       title: 'Current Location'
