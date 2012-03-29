@@ -1,0 +1,18 @@
+#header
+  %a{:href => '/'}
+    = img '/images/logo.png', {:id => 'logo'}
+
+  %ul{:id => 'menu'}
+    %li
+      %a{:href => '/about', :class => "#{cp('about')}"}= 'About'
+    %li
+      %a{:href => '/contact', :class => "#{cp('contact')}"}= 'Contact'
+    %li
+      %a{:href => '/help', :class => "#{cp('help')}"}= 'Help'
+    %li
+      %a{:href => '/mobile', :class => "#{cp('mobile')}"}= 'Mobile'
+    %li
+      %a{:href => '/api', :class => "#{cp('api')}"}= 'Developer'
+    .clearfix
+
+  .clearfix

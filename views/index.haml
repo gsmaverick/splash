@@ -39,13 +39,13 @@
 
 #footer
   %b= 'Splash'
-  %a{:href => '#'}= 'About'
-  %a{:href => '#'}= 'Contact'
-  %a{:href => '#'}= 'Help'
-  %a{:href => '#'}= 'Mobile'
-  %a{:href => '#'}= 'Developer'
-  %a{:href => '#', :style => 'border-right: 0;'}
-    = img 'images/twitter.png' 
+  %a{:href => '/about'}= 'About'
+  %a{:href => '/contact'}= 'Contact'
+  %a{:href => '/help'}= 'Help'
+  %a{:href => '/mobile'}= 'Mobile'
+  %a{:href => '/api'}= 'Developer'
+  %a{:href => 'http://twitter.com/splashHQ', :style => 'border-right: 0;'}
+    = img 'images/twitter.png'
     = 'Follow'
   
   %span= '&copy;&nbsp;2012 Open Hamilton.&nbsp;&nbsp;All Rights Reserved.'

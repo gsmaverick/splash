@@ -8,9 +8,9 @@
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
 
     = css :application
-
-    %script{:type => "text/javascript", :src => 'http://maps.googleapis.com/maps/api/js?sensor=true&region=CA'}
-    = js :desktop
-
-    %body{:class => 'app'}
-      = yield
+    = js :slim
+    
+    %body{:class => 'slim'}
+      = partial(:header)
+      #container
+        = yield
