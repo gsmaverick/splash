@@ -11,8 +11,13 @@
       %a{:href => '/help', :class => "#{cp('help')}"}= 'Help'
     %li
       %a{:href => '/mobile', :class => "#{cp('mobile')}"}= 'Mobile'
-    %li
+    %li{:class => 'last'}
       %a{:href => '/api', :class => "#{cp('api')}"}= 'Developer'
     .clearfix
+  
+  .social
+    %a{:href => '//twitter.com'}= img 'images/twitter.png'
+    %a{:href => '//facebook.com'}= img 'images/facebook.png'
+    %a{:href => '//tumblr.com'}= img 'images/tumblr.png'
 
   .clearfix
