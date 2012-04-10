@@ -33,3 +33,8 @@ window.Splash =
 
   Config:
     center: new google.maps.LatLng(43.24895389686911, -79.86236572265625)
+    
+    # These two LatLng values are used to bias the results when geocoding user
+    # search input
+    northeast: new google.maps.LatLng(43.44232562133663, -79.44969177246094)
+    southwest: new google.maps.LatLng(43.08782090353749, -80.23246765136719) 

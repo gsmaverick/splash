@@ -5,6 +5,9 @@ class Splash.Views.SearchView extends Backbone.View
     'click a': 'advanced'
     'submit #search_form': 'search'
   
+  initialize: ->
+    @bounds = new google.maps.LatLngBounds(Splash.Config.southwest, Splash.Config.northeast)
+  
   # Toggles the state of the advanced search overlay with a sliding motion
   advanced: (e) =>
     e.preventDefault()
@@ -19,8 +22,7 @@ class Splash.Views.SearchView extends Backbone.View
     # the `location` parameter.
     props =
       address: @$('#query').val()
-      location: Splash.Config.center
-      region: 'CA'
+      bounds: @bounds
 
     Splash.Geocoder.geocode props, @updateMap
   
