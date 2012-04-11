@@ -1,3 +1,6 @@
+# Handles the interactions with the SearchView in the upper left corner of the
+# screen on the desktop.  The advanced search drop down is not handled by this
+# code.  This view attaches to the existing #header element in the DOM.
 class Splash.Views.SearchView extends Backbone.View
   el: '#header'
 
@@ -13,20 +16,21 @@ class Splash.Views.SearchView extends Backbone.View
     e.preventDefault()
     $('#advanced').slideToggle('fast')
 
-  # Handles a form submission
+  # Handles a form submission by firing off a geocoding request through the 
+  # Google Maps API.
   search: (e) =>
     e.preventDefault()
 
     # Create the properties hash for the geocoder.  It will only search within
-    # Canada and will bias results to those closest to the position defined by
-    # the `location` parameter.
+    # Canada and will bias results to those inside the rectangle defined by the
+    # `bounds` parameter.
     props =
       address: @$('#query').val()
       bounds: @bounds
 
     Splash.Geocoder.geocode props, @updateMap
   
-  # Handles the result of a geocoding request.  
+  # Handles the result of a geocoding request.
   updateMap: (results, status) =>
     switch status
       when google.maps.GeocoderStatus.OK
