@@ -1,0 +1,50 @@
+// Clears any extra space off any divs
+// It also adds the box-sizing property to make layouts easier
+div
+  display: block
+  margin: 0
+  padding: 0
+
+.clear
+  clear: both
+
+=twostop-gradient($one, $two)
+  background: $one
+  background: -moz-linear-gradient(top, $one 0, $two 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $one), color-stop(100%, $two))
+  background: -webkit-linear-gradient(top, $one 0, $two 100%)
+  background: -o-linear-gradient(top, $one 0, $two 100%)
+  background: -ms-linear-gradient(top, $one 0, $two 100%)
+  background: linear-gradient(top, $one 0, $two 100%)
+
+=fourstop-gradient($one, $two, $three, $four)
+  background: $one
+  background: -moz-linear-gradient(top, $one 0, $two 49%, $three 51%, $four 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $one), color-stop(49%, $two), color-stop(51%, $three), color-stop(100%, $four))
+  background: -webkit-linear-gradient(top, $one 0, $two 49%, $three 51%, $four 100%)
+  background: -o-linear-gradient(top, $one 0, $two 49%, $three 51%, $four 100%)
+  background: -ms-linear-gradient(top, $one 0, $two 49%, $three 51%, $four 100%)
+  background: linear-gradient(top, $one 0, $two 49%, $three 51%, $four 100%)
+
+=box-shadow($x, $y, $z, $color, $a: 0)
+  -o-box-shadow: $x $y $z $a $color
+  -moz-box-shadow: $x $y $z $a $color
+  -webkit-box-shadow: $x $y $z $a $color
+  box-shadow: $x $y $z $a $color
+
+=box-shadow-inset($x, $y, $z, $color, $a: 0)
+  -o-box-shadow: inset $x $y $z $a $color
+  -moz-box-shadow: inset $x $y $z $a $color
+  -webkit-box-shadow: inset $x $y $z $a $color
+  box-shadow: inset $x $y $z $a $color
+
+=box-shadow-inset-top($x, $y, $z, $color, $a: 0)
+  -o-box-shadow: inset $x $y $z $a $color, inset 0 0 0 rgba(255,255,255,0), 0 0 0 transparent
+  -moz-box-shadow: inset $x $y $z $a $color, inset 0 0 0 rgba(255,255,255,0), 0 0 0 transparent
+  -webkit-box-shadow: inset $x $y $z $a $color, inset 0 0 0 rgba(255,255,255,0), 0 0 0 transparent
+  box-shadow: inset $x $y $z $a $color, inset 0 0 0 rgba(255,255,255,0), 0 0 0 transparent
+
+=background-clip
+  background-clip: padding-box
+  -moz-background-clip: padding-box
+  -webkit-background-clip: padding-box

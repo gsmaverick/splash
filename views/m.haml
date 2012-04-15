@@ -1,0 +1,74 @@
+!!!
+%html{:lang => 'en'}
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'apple-mobile-web-app-capable', :content => 'yes'}
+    %meta{:name => 'apple-mobile-web-app-status-bar-style', :content => 'black'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'}
+
+    %title Splash
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
+    %link{:href => "/css/mobile.css", :rel => "stylesheet", :type => "text/css"}    
+
+    %script{:src => '/js/vendor/zepto.js', :type => 'text/javascript'}
+    %script{:src => '/js/android.js', :type => 'text/javascript'}
+
+    %body{:ontouchstart => ' '}
+      #header
+        .headline= 'Search'
+
+        .btn{:style => 'top: 0; right: 68px;'}
+          %a{:href => '#'}
+            = img '/images/filter.png', {:style => 'margin: 5px 0 5px -1px;'}
+
+        .btn{:style => 'top: 0; right: 0;'}
+          %a{:href => '#'}
+            = img '/images/globe.png'
+      
+      #search_form
+        .input_container
+          %input{:type => 'text', :name => 'query', :id => 'q', :placeholder => 'Address or facility name'}
+      
+      .hint
+        = img '/images/blue-pin.png'
+        = 'Current Location'
+      
+      .result_marker= '6 Results Nearby'
+
+      %ul{:class =>'results'}
+        %li{:class => 'result'}
+          = img '/images/next.png', {:class => 'arrow'}
+          = img '/images/beach.png', {:class => 'type'}
+          .info
+            %p{:class => 'name'}= 'Valens Conservation Area'
+            %p{:class => 'address'}= '1691 Regional Road 97 (R.R.#6), Flamborough'
+            %span{:class => 'count'}= '4'
+            %span= 'Public Activities'
+          .clear
+        %li{:class => 'result'}
+          = img '/images/next.png', {:class => 'arrow'}
+          = img '/images/outdoor.png', {:class => 'type'}
+          .info
+            %p{:class => 'name'}= 'Valens Conservation Area'
+            %p{:class => 'address'}= '1691 Regional Road 97 (R.R.#6), Flamborough'
+            %span{:class => 'count'}= '1'
+            %span= 'Public Activity'
+          .clear
+        %li{:class => 'result'}
+          = img '/images/next.png', {:class => 'arrow'}
+          = img '/images/wading.png', {:class => 'type'}
+          .info
+            %p{:class => 'name'}= 'Valens Conservation Area'
+            %p{:class => 'address'}= '1691 Regional Road 97 (R.R.#6), Flamborough'
+            %span{:class => 'count'}= '0'
+            %span= 'Public Activities'
+          .clear
+        %li{:class => 'result'}
+          = img '/images/next.png', {:class => 'arrow'}
+          = img '/images/beach.png', {:class => 'type'}
+          .info
+            %p{:class => 'name'}= 'Valens Conservation Area'
+            %p{:class => 'address'}= '1691 Regional Road 97 (R.R.#6), Flamborough'
+            %span{:class => 'count'}= '6'
+            %span= 'Public Activities'
+          .clear
