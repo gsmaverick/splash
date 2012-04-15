@@ -2,8 +2,9 @@ require 'rubygems'
 require 'bundler'
 require 'sinatra'
 require 'sinatra/assetpack'
-require 'haml'
-require 'coffee-script'
+require 'sinatra/subdomain'
+#require 'haml'
+#require 'coffee-script'
 
 # Source: https://gist.github.com/119874
 module Sinatra::Partials
@@ -32,6 +33,7 @@ end
 class Splash < Sinatra::Base
   set :root, File.dirname(__FILE__)
   register Sinatra::AssetPack
+  register Sinatra::Subdomain
   helpers Sinatra::Partials
 
   assets {
@@ -64,14 +66,29 @@ class Splash < Sinatra::Base
     ]
 
     js_compression  :jsmin      # Optional
-    css_compression :sass       # Optional
+    css_compression :sass
   }
 
   set :public_folder, File.dirname(__FILE__) + '/static'
   set :views, File.dirname(__FILE__) + '/views'
 
+  # Renders mobile pages
+  subdomain :m do
+    get '/' do
+      haml :m, :layout => false
+    end
+  end
+
+  # Sub-domain for all API requests
+  #subdomain :api do
+  #end
+
   get '/' do
-    haml :index
+    if params[:mobile]
+      haml :m, :layout => false
+    else
+      haml :index
+    end
   end
 
   get '/about' do
