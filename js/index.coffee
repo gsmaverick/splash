@@ -13,7 +13,7 @@ window.Splash =
   Routers: {}
   
   # This is a namespace for functions that are needed to execute various tasks
-  # that don't fall strictly inside the scope of a Backbone primitive
+  # that don't fall strictly inside the scope of a Backbone primitive object.
   Controllers: {}
 
   # This is a namespace for any view helpers needed.  A helper should be an 
@@ -21,20 +21,27 @@ window.Splash =
   Helpers: {}
 
   # Event bus for different parts of the application to communicate without
-  # needing to know specific implementation details
+  # needing to know specific implementation details.
   Vent: _.extend {}, Backbone.Events
   
   # Any initialized store of data be it a collection or model is stored in here
   # to prevent duplication of data.
   Data: {}
   
-  # Application wide instance of the Google Geocoder
+  # Application wide instance of the Google Geocoder.
   Geocoder: new google.maps.Geocoder()
 
   Config:
+    # Default location to center any map on unless otherwise specified.
     center: new google.maps.LatLng(43.24895389686911, -79.86236572265625)
     
     # These two LatLng values are used to bias the results when geocoding user
-    # search input
+    # search input.  In the future these will be moved out of here into some
+    # location that's more configurable.
     northeast: new google.maps.LatLng(43.44232562133663, -79.44969177246094)
-    southwest: new google.maps.LatLng(43.08782090353749, -80.23246765136719) 
+    southwest: new google.maps.LatLng(43.08782090353749, -80.23246765136719)
+
+# Application-wide logging function.  Will only log to console if that global 
+# variable __DEBUG__ is set.  Will extend later to make more functional. 
+window.Debug = (err) ->
+  console.log err if __DEBUG__?
