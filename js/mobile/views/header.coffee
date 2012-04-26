@@ -7,6 +7,7 @@ class Splash.Views.HeaderView extends Backbone.View
     'click .headline': 'click'
     'webkitTransitionEnd .headline': 'transitionEnd'
     'webkitTransitionEnd .btn': 'transitionEnd'
+    'click .btn': 'btn'
 
   # List off all possible button images for the header
   images:
@@ -34,7 +35,7 @@ class Splash.Views.HeaderView extends Backbone.View
     for btn, i in buttons
       @$el.append @button_tmpl
         'dir': @dir
-        'image_name': btn
+        'name': btn
         'style': @images[btn]
         'num': ['one', 'two'][i]
 
@@ -62,3 +63,11 @@ class Splash.Views.HeaderView extends Backbone.View
 
     if target.hasClass 'old-' + @dir
       target.remove()
+  
+  btn: (e) =>
+    e.preventDefault()
+
+    name = ($ e.currentTarget).data 'name'
+    Splash.Vent.trigger 'header:button:click', name
+    
+    false

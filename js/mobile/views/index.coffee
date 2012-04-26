@@ -3,7 +3,6 @@ class Splash.Views.Index extends Backbone.Screen
   className: 'screen'
 
   _ident: 'index'
-  _header: ['Splash']
 
   events:
     'click li': 'click'
@@ -16,3 +15,6 @@ class Splash.Views.Index extends Backbone.Screen
     id = ($ e.currentTarget).attr 'id'
     fragment = (id.split '-')[1]
     Splash.Data.Router.navigate fragment, {trigger: true}
+  
+  getHeaderState: ->
+    headline: 'Splash'

@@ -4,8 +4,10 @@ class Splash.Views.AboutView extends Backbone.Screen
   className: 'screen'
 
   _ident: 'about'
-  _header: ['About Splash']
   
   render: =>
     tmpl = Handlebars.compile ($ "#about-view-template").html()
     ($ @el).html tmpl()
+  
+  getHeaderState: ->
+    headline: 'About Splash'
