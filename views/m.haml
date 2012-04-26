@@ -26,9 +26,9 @@
       = partial('mobile/footer')
 
     %script{:id => 'header-button-template', :type => 'text/x-handlebars-template'}
-      != "<div class='btn animatable {{num}} new-{{dir}}'>"
+      != "<div class='btn animatable {{num}} new-{{dir}}' data-name='{{name}}'>"
       %a{:href => '#'}
-        = img '/images/{{image_name}}.png', {:style => '{{style}}'}
+        = img '/images/{{name}}.png', {:style => '{{style}}'}
       != "</div>"
     
     %script{:id => 'headline-template', :type => 'text/x-handlebars-template'}
@@ -36,3 +36,9 @@
     
     %script{:id => 'search-view-template', :type => 'text/x-handlebars-template'}
       = partial('mobile/search')
+    
+    %script{:id => 'result-view-template', :type => 'text/x-handlebars-template'}
+      = partial('mobile/result')
+    
+    %script{:id => 'detail-view-template', :type => 'text/x-handlebars-template'}
+      = partial('mobile/detail')
