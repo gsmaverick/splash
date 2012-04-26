@@ -55,6 +55,18 @@ class Splash < Sinatra::Base
       '/js/web.js'
     ]
 
+    js :mobile, '/js/mobile.js', [
+      '/js/vendor/zepto.js',
+      '/js/vendor/underscore.js',
+      '/js/vendor/backbone.js',
+      '/js/vendor/handlebars.js',
+      '/js/index.js',
+      '/js/models/*.js',
+      '/js/views/*.js',
+      '/js/mobile/*.js',
+      '/js/mobile/views/*.js'
+    ]
+
     js :slim, '/js/slim.js', [
       '/js/vendor/jquery.js'
     ]
