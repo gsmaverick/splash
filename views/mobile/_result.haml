@@ -1,0 +1,9 @@
+%li{:class => 'result', :data => {:id => '{{id}}'}}
+  = img '/images/next.png', {:class => 'arrow'}
+  = img '/images/{{type}}.png', {:class => 'type'}
+  .info
+    %h3{:class => 'name'}= '{{name}}'
+    %h4{:class => 'address'}= '{{address}}'
+    %span{:class => 'count'}= '{{num}}'
+    %span{:class => 'info'}= 'Public Activities'
+  .clear
