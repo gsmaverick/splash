@@ -1,0 +1,150 @@
+// Main application header area
+#header
+  position: absolute
+  z-index: 10000
+  height: 44px
+  width: 100%
+
+  +fourstop-gradient(#6EBED8, #4EAFD0, #3EA8CC, #2F91B1)
+  +box-shadow-inset(0, 3px, 2px, #AEDBEA, -2px)
+
+  border-bottom: 1px solid #226981
+  border-top: 1px solid #2F91B1
+
+  // Screen title div, along with active state
+  .headline
+    position: absolute
+    width: 100%
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+
+    +fourstop-gradient(#6EBED8, #4EAFD0, #3EA8CC, #2F91B1)
+    +box-shadow-inset(0, 3px, 2px, #AEDBEA, -2px)
+
+    color: #FFFFFF
+    text-shadow: 0 -1px 1px #2F91B1
+
+    font-weight: bold
+    font-size: 20px
+    line-height: 44px
+
+    // We have to fake this on Android since it won't handle :active properly
+    // on elements that aren't an anchor tag.  See the mobile javascript code 
+    // to see the implementation.
+    &:active,
+    &.fake-active
+      +fourstop-gradient(#4EAFD0, #339EC1, #2F91B1, #277691)
+    
+    // The values of the padding needs to changed depending on the number of 
+    // buttons currently displayed in the header
+    &.zero
+      padding: 0 10px
+    &.one
+      padding: 0 79px 0 10px
+    &.two
+      padding: 0 138px 0 10px
+  
+  // Action buttons with embossed look
+  .btn
+    position: absolute
+    padding: 0 10px // Keep this a fair size to make the clickable region large
+    //                 enough to avoid frustrating users.
+    min-height: 44px
+    min-width: 44px
+
+    &.one
+      top: 0px
+      right: 0px
+    
+    &.two
+      top: 0px
+      right: 64px
+
+    a
+      display: block
+      margin: 7px 0
+      padding: 0
+
+      height: 30px
+      min-width: 30px
+
+      +twostop-gradient(#5EB7D4, #226981)
+      +box-shadow-inset(0, 0, 3px, #1E5C71, -1px)
+
+      color: white
+      text-align: center
+      text-decoration: none
+      text-shadow: 0 -1px 0px #1A4F61
+
+      font-size: 14px
+      line-height: 30px
+      font-weight: bold
+
+      border: 1px solid #226981
+      border-bottom: 1px solid #3EA8CC
+      border-radius: 4px
+
+      &:active
+        +box-shadow-inset(0, 0, 8px, #1E5C71)
+
+      img
+        margin: 4px 0 5px 0
+        padding: 0
+        height: 20px
+        width: 20px
+        border: 0
+        outline: 0
+
+#index
+  height: 100%
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  
+// Home screen footer bar
+#footer
+  position: absolute
+  bottom: 0
+  left: 0
+
+  width: 100%
+  text-align: center
+
+  border-top: 1px solid #2F91B1
+  +twostop-gradient(#339EC1, #277691)
+
+  ul
+    margin: 0px auto
+    padding: 0 10px
+    list-style-type: none
+    width: 300px
+
+    li
+      float: left
+      min-width: 68px
+      margin: 15px 0
+      padding: 0 15px
+
+      color: #fff
+      text-shadow: 0 1px 2px #1A4F61
+      font-weight: bold
+      font-size: 16px
+      line-height: 1
+
+      border-left: 1px solid #2f91b1
+      border-right: 1px solid #1e5c71
+
+      &:first-child
+        border-left: none
+
+      &:nth-last-child(2)
+        border-right: none
+
+      img
+        display: block
+        margin: 0 auto 10px auto
+        opacity: 0.9

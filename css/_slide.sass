@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+//   Styles used in the animating of screens changing via sliding.  These are
+//   styles used globally for all screens.
+//
+//   .animatable - Adds the transition properties to an element.
+//   .new-rtl,   
+//   .new-ltr,   
+//   .old-rtl,   
+//   .old-ltr    - Transformation classes for sliding rtl, ltr and whether or 
+//                 not the element is the old/new screen.
+//   .finish     - After a screen has been animated into the content section 
+//                 this class is used to take care of some positioning issues 
+//                 when using absolutely positioned elements.
+//   .screen     - Class used to provide consistent styling across any view in 
+//                 the application that needs sliding capabilities.
+// -----------------------------------------------------------------------------
+.animatable
+  -webkit-transition: all 0.45s ease-out
+
+.new-rtl,
+.old-ltr
+  -webkit-transform: translate3d(1000px, 0, 0) !important
+
+.new-ltr,
+.old-rtl
+  -webkit-transform: translate3d(-1000px, 0, 0) !important
+
+.finish
+  -webkit-transform: translate3d(0px, 0px, 0px)
+
+.screen
+  position: absolute
+  padding-top: 44px
+  width: 100%
+
+  &:after
+    clear: both

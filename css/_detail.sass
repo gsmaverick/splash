@@ -1,0 +1,158 @@
+// Styling for displaying the details of a specific place
+.titlecard
+  position: relative
+  padding: 10px 10px 15px
+  background: #EFEFEF
+
+  h2
+    margin: 0 0 10px 0
+    padding: 0
+
+    font-size: 18px
+    color: #444444
+    text-shadow: 0 1px 1px #FFFFFF
+  
+  h4
+    margin: 0
+    padding: 0
+
+    font-size: 14px
+    color: #636363
+    text-shadow: 0 1px 1px #FAFAFA
+  
+  // Circular phone holder
+  .phone
+    +twostop-gradient(#D3D3D3, #E3E3E3)
+    +border-radius(23px) // need to add a helper for this
+
+    position: absolute
+    right: 5px
+    top: 50%
+    
+    margin-top: -23px
+    height: 46px
+    width: 46px
+
+    a
+      +twostop-gradient(#FEFEFE, #ECECEC)
+      +border-radius(18px)
+
+      display: block
+      margin: 4px
+      height: 36px
+      width: 36px
+      border: 1px solid #DDDDDD
+
+      img
+        margin: 8px
+
+#action_bar
+  padding: 5px
+  color: #FFFFFF
+
+  +fourstop-gradient(#6EBED8, #4EAFD0, #3EA8CC, #2F91B1)
+  border-top: 1px solid #3EA8CC
+  border-bottom: 1px solid #226981
+  +box-shadow(0, 2px, 3px, rgba(20,20,20,0.5))
+
+  ul
+    list-style-type: none
+    display: block
+    margin: 0
+    padding: 0
+
+    height: 44px
+    z-index: 10000
+
+    li
+      width: 50%
+      display: block
+      float: left
+
+      a
+        +border-radius(5px)
+        +twostop-gradient(#5EB7D4, #226981)
+
+        display: block
+        margin: 5px 8px
+        height: 34px
+
+        color: #FFFFFF
+        font-size: 16px
+        line-height: 34px
+
+        font-weight: bold
+        text-decoration: none
+        text-align: center
+
+        border: 1px solid #2B84A1
+        border-bottom: 1px solid #4EAFD0        
+
+        img
+          vertical-align: text-top
+          margin-right: 5px
+
+.map
+  position: relative
+  margin: 0 0 -5px 0
+  padding: 0
+
+  z-index: -1
+  text-align: center
+
+  img
+    margin: 0
+    padding: 0
+    max-width: 100%
+    max-height: 200px
+
+.activity
+  position: relative
+  padding: 8px 24px 8px 10px
+
+  background: #E6E6E6
+  border-top: 1px solid #FFFFFF
+  border-bottom: 1px solid #999999
+  
+  color: #444
+  font-size: 16px
+  font-weight: bold
+  text-shadow: 0 1px 1px #fff
+
+  &:active,
+  &.fake-active
+    background: #D6D6D6
+  
+  &.open
+    box-shadow: 0 1px 3px rgba(20, 20, 20, 0.4) !important
+
+    .arrow // Rotate the arrow when an activity is open
+      -webkit-transform: rotate(-90deg)
+
+  &.first
+    box-shadow: none
+  &.after
+    box-shadow: 0 -1px 3px rgba(20, 20, 20, 0.35)
+  
+  span
+    float: right
+    color: #666666
+
+  .arrow
+    position: absolute
+    top: 50%
+    right: 6px
+    margin-top: -8px
+
+    opacity: 0.45
+    -webkit-transform: rotate(90deg)
+
+.inset
+  margin: 0 0 0 30px
+  display: none
+
+  .activity
+    z-index: -1
+    padding-right: 28px
+    font-size: 14px
+    //border-left: 1px solid #AAAAAA
